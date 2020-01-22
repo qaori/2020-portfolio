@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/sample.css">
+    <title>じゃんけん</title>
+</head>
+
+<body>
+    <header>
+        <div class="janken">
+            <div class="css-fukidashi">
+                <!-- <p class="text">ここをマウスオーバーすると・・・</p> -->
+                <!-- <p class="fukidashi">吹き出しが表示されます</p> -->
+                <h1 class="text"><img src="img/cat_jank.jpg" alt="">ネコとジャンケンたぁーいむ!!!!</h1>
+                <p class="fukidashi">ジャンケンやろーぜ！</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id=battle>
+            <div id="com_hand"></div>
+            <div id="judgment">
+                <!-- 結果は？ 画像が交互に出る（点滅？)-->
+                <img src="img/interval2.png" alt="">
+                <img src="img/interval.png" alt="">
+            </div>
+        </div>
+
+        </div>
+        <ul>
+            <!-- ぐー -->
+            <li id="gu_btn"><a href="#"><img src="img/gu-2.png" alt=""></a></li>
+            <!-- ちょき -->
+            <li id="cho_btn"><a href="#"><img src="img/choki2.png" alt=""></a></li>
+            <!-- ぱー -->
+            <li id="par_btn"><a href="#"><img src="img/pa-2.png" alt=""></a></li>
+        </ul>
+
+    </main>
+
+    <footer>2019/05/kaori.</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            //ここに処理を追加
+            const result = ['グー', 'チョキ', 'パー']
+
+            $('#gu_btn').on('click', function () {
+                // 自分の手はグー
+                let rand = Math.floor(Math.random() * 3);
+                // 0コンピュータグー,1コンピュータチョキ,2コンピュータパー
+                // コンピュータの手を表示
+                // $('com_hand').text('コンピュータの手：' + result[rand]);←これがあるとテキスト通りの表示になる。
+                if (rand == 0) {
+                    $('#com_hand').html('<img src="img/gu-.jpg" alt="" width="200" height="200">');
+                    $('#judgment').text('あいこ');
+                    $('#judgment').html('<img src="img/aiko.png" alt="" width="200" height="200">');
+                } else if (rand == 1) {
+                    $('#com_hand').html('<img src="img/choki.png" alt="" width="200" height="200">');
+                    $('#judgment').text('勝ち');
+                    $('#judgment').html('<img src="img/win.png" alt="" width="200" height="200">');
+                } else {
+                    $('#com_hand').html('<img src="img/pa-.png" alt="" width="200" height="200">');
+                    $('#judgment').text('負け');
+                    $('#judgment').html('<img src="img/make.png" alt="" width="200" height="200">');
+                }
+            });
+            $('#cho_btn').on('click', function () {
+                // 自分の手はチョキ
+                let rand = Math.floor(Math.random() * 3);
+                // 0コンピュータグー,1コンピュータチョキ,2コンピュータパー
+                // コンピュータの手を表示
+                // $('#com_hand').text('コンピュータの手：' + result[rand]);
+                if (rand == 0) {
+                    $('#com_hand').html('<img src="img/pa-.png" alt="" width="200" height="200">');
+                    $('#judgment').text('負け');
+                    $('#judgment').html('<img src="img/make.png" alt="" width="200" height="200">');
+                } else if (rand == 1) {
+                    $('#com_hand').html('<img src="img/choki.png" alt="" width="200" height="200">');
+                    $('#judgment').text('あいこ');
+                    $('#judgment').html('<img src="img/aiko.png" alt="" width="200" height="200">');
+                } else {
+                    $('#com_hand').html('<img src="img/gu-.jpg" alt="" width="200" height="200">');
+                    $('#judgment').text('勝ち');
+                    $('#judgment').html('<img src="img/win.png" alt="" width="200" height="200">');
+                }
+            });
+            $('#par_btn').on('click', function () {
+                // 自分の手はパー
+                let rand = Math.floor(Math.random() * 3);
+                // 0コンピュータグー,1コンピュータチョキ,2コンピュータパー
+                // コンピュータの手を表示
+                // $('#com_hand').text('コンピュータの手：' + result[rand]);
+                if (rand == 0) {
+                    $('#com_hand').html('<img src="img/gu-.jpg" alt="" width="200" height="200">');
+                    $('#judgment').text('勝ち');
+                    $('#judgment').html('<img src="img/win.png" alt="" width="200" height="200">');
+                } else if (rand == 1) {
+                    $('#com_hand').html('<img src="img/choki.png" alt="" width="200" height="200">');
+                    $('#judgment').text('負け');
+                    $('#judgment').html('<img src="img/make.png" alt="" width="200" height="200">');
+                } else {
+                    $('#com_hand').html('<img src="img/pa-.png" alt="" width="200" height="200">');
+                    $('#judgment').text('あいこ');
+                    $('#judgment').html('<img src="img/aiko.png" alt="" width="200" height="200">');
+                }
+            });
+
+        });
+
+    </script>
+    <script async defer src="// assets.pinterest.com/js/pinit.js"> </script>
+
+</body>
+
+</html>

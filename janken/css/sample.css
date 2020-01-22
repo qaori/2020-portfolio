@@ -1,0 +1,106 @@
+body{
+    margin:0;
+    padding:0;
+    text-align:center;
+    /* font-size: 32px; */
+}
+header{
+    background-color: rgba(255, 255, 255, 0.349);
+    border-bottom: 1px solid rgba(204, 204, 204, 0.473);
+    text-align: center;
+}
+/* ふきだし */
+/* body { 
+      margin: 0;
+      padding: 0;
+    }*/
+    .css-fukidashi {
+      padding: 0;
+      margin: 0;
+    }
+    .text {
+      /* width: 200px; */
+      position: relative;
+      /* margin:80px 50px 50px; */
+      padding: 20px;
+      border: 1px solid rgba(204, 204, 204, 0.473);
+    }
+    .fukidashi {
+      display: none;
+      width: 100px;
+      position: absolute;
+      top: 0;
+      left: 250px;
+      padding: 16px;
+      border-radius: 50px 50px 50px 17px;
+      background: red;
+      color: black;
+      font-weight: bold;
+    }
+    .fukidashi:after {
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 0;
+      bottom: -19px;
+      margin-left: 10px;
+      border: solid transparent;
+      border-color: rgba(51, 204, 153, 0);
+      border-top-color: red;
+      border-width: 10px;
+      pointer-events: none;
+      content: " ";
+    }
+    .text:hover + .fukidashi {
+      display: block;
+    }
+    /* ーーーーーーーーーーーーーーーー */
+
+main{
+    border-bottom:1px solid #ccc; 
+}
+#battle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+/* #judgment{ */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+/* } */
+
+
+
+footer{
+    background-color: rgb(221, 219, 219);
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+
+p{
+    font-size:200%;
+    text-align: center;
+    border-bottom:1px solid rgb(248, 228, 190);
+    height:200px;
+}
+ul{
+    padding: 0;
+    border-top: 1px solid #000000;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%;
+}
+li{
+    text-align: center;
+    list-style-type:none;
+    border: 1px solid #666;
+    background-color: rgba(250, 223, 200, 0.952);
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+li:hover{
+    background: #fff;
+    color:#fff;
+}

@@ -1,0 +1,70 @@
+html,body{
+  font-family: 'M PLUS 1p', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 0 auto;
+  font-size: 12px;
+  background-color: antiquewhite;
+}
+
+.flex{
+  margin-top: 150px;
+}
+
+.post {
+  margin: 10px;
+}
+
+.text1{
+  font-family: 'Bangers', cursive;
+  font-size: 4rem;
+  margin: 15px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+img {
+  border-radius: 15px;
+}
+
+p{
+  font-size: 1rem;
+}
+
+/* 横スクロール */
+.horizontal_scroll {
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 0 12px 8px;
+  display: -ms-flexbox;
+  display: flex; }
+
+
+
+
+/* 画面幅が768px以下の場合、横スクロールを解除 */
+@media screen and (max-width: 800px) {
+  .flex{
+    margin-top: 30px;
+  }
+  .horizontal_scroll {
+display: block;
+}
+.post img{
+  width: 300px;
+  margin: 0;
+}
+.text1{
+  font-size: 1.4rem;
+  margin: 10px;
+}
+  }
+.post p{
+  font-size: 0.1rem;
+}
+
+

@@ -1,0 +1,114 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    font-size: 62.5%;
+    font-family: 'Bangers', cursive;
+}
+
+/* header */
+header {
+    font-size: 2rem;
+    padding: 20px;
+}
+header, a{
+    color: black;
+    text-decoration: none;
+}
+
+
+/* section top*/
+section {
+    font-family: 'Kosugi Maru', sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.63);
+    margin: 80px;
+    border-radius: 10px;
+}
+.image img{
+    border-radius: 35px;
+    padding: 30px;
+    margin: 10px;
+    width: 300px;
+}
+h3 {
+    font-size: 2.8rem;
+    font-weight: lighter;
+}
+p {
+    font-size: 1.4rem;
+}
+.twitter {
+    margin-top: 30px;
+    padding: 18px;
+}
+
+/* mail */
+.mail, h2 {
+    transform:translateX(20px) translateY(20px) rotate(-10deg);
+    font-size: 3rem;
+    font-family: 'Bangers', cursive;
+}
+
+/* footer*/
+footer {
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+}
+.foot-nav {
+    display: flex;
+    margin-left: 300px;
+}
+.GitHub, img{
+    width: 30px;
+    border-radius: 30px;
+}
+.insta img{
+    width: 30px;
+    border-radius: 0;
+    padding: 0 15px;
+}
+
+@media screen and (max-width:700px){
+    header{
+        margin: 10px;
+        font-size: 2rem;
+        padding: 0;
+    }
+    section{
+        background-color: rgba(255, 255, 255, 0.555);
+        margin: 20px;
+    }
+    .image img{
+        width: 200px;
+        border-radius: 10px;
+        padding: 10;
+    }
+    .twitter {
+    margin-top: 10px;
+    padding: 0;
+}
+    .mail, h2{
+        float: left;
+        margin-left: 0;
+        font-size: 2rem;
+        transform:translateX(10px) translateY(10px) rotate(-10deg);
+    }
+    footer{
+        position: absolute;
+        bottom: 0;
+    }
+    .foot-nav{
+        margin-top: 400px;
+        margin-left: 0;
+    }
+    .GitHub img{
+        width: 20px;
+    }
+    .insta img{
+        width: 20px;
+    }
+}

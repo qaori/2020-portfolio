@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>四角がクルクルしたりする</title>
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="anime.min.js"></script>
+</head>
+
+<body>
+    <style>
+        .sample {
+            margin: 25px;
+            width: 50px;
+            height: 50px;
+            border: 1px;
+            background-color: rgb(245, 162, 107);
+        }
+
+        .sample01 {
+            margin: 25px;
+            width: 50px;
+            height: 50px;
+            border: 1px;
+            background-color: rgb(243, 16, 232);
+        }
+
+        .sample02 {
+            margin: 25px;
+            width: 50px;
+            height: 50px;
+            border: 1px;
+            background-color: rgb(240, 124, 29);
+        }
+
+        .sample03 {
+            margin: 25px;
+            width: 50px;
+            height: 50px;
+            border: 1px;
+            background-color: rgb(234, 248, 40);
+        }
+
+        .sride {
+            width: 50px;
+            height: 50px;
+            border: 1px;
+            background-color: rgb(226, 121, 114);
+        }
+
+        .sride02 {
+            width: 50px;
+            height: 50px;
+            border: 1px;
+            background-color: rgb(19, 133, 34);
+            margin: auto;
+        }
+
+
+
+        body {
+            background-color: #e74c3c;
+            animation: bg-color 10s infinite;
+            -webkit-animation: bg-color 10s infinite;
+        }
+
+        @-webkit-keyframes bg-color {
+            0% {
+                background-color: #e74c3c;
+            }
+
+            20% {
+                background-color: #f1c40f;
+            }
+
+            40% {
+                background-color: #1abc9c;
+            }
+
+            60% {
+                background-color: #3498db;
+            }
+
+            80% {
+                background-color: #9b59b6;
+            }
+
+            100% {
+                background-color: #e74c3c;
+            }
+        }
+
+        @keyframes bg-color {
+            0% {
+                background-color: #e74c3c;
+            }
+
+            20% {
+                background-color: #f1c40f;
+            }
+
+            40% {
+                background-color: #1abc9c;
+            }
+
+            60% {
+                background-color: #3498db;
+            }
+
+            80% {
+                background-color: #9b59b6;
+            }
+
+            100% {
+                background-color: #e74c3c;
+            }
+        }
+
+        #kaiten {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <div id="kaiten">
+        <div class="sample"></div>
+        <div class="sample01"></div>
+        <div class="sample02"></div>
+        <div class="sample03"></div>
+    </div>
+    <div class="sride"></div>
+    <div id="kaiten">
+        <div class="sample"></div>
+        <div class="sample01"></div>
+        <div class="sample02"></div>
+        <div class="sample03"></div>
+    </div>
+    <div class="sride02"></div>
+    <div id="kaiten">
+        <div class="sample"></div>
+        <div class="sample01"></div>
+        <div class="sample02"></div>
+        <div class="sample03"></div>
+    </div>
+    <div class="sride"></div>
+    <div id="kaiten">
+        <div class="sample"></div>
+        <div class="sample01"></div>
+        <div class="sample02"></div>
+        <div class="sample03"></div>
+    </div>
+    <div class="sride02"></div>
+    <div id="kaiten">
+        <div class="sample"></div>
+        <div class="sample01"></div>
+        <div class="sample02"></div>
+        <div class="sample03"></div>
+    </div>
+    <div class="sride"></div>
+    <div id="kaiten">
+        <div class="sample"></div>
+        <div class="sample01"></div>
+        <div class="sample02"></div>
+        <div class="sample03"></div>
+    </div>
+    <div class="sride02"></div>
+
+    <script>
+        anime({
+            targets: '.sample',
+            rotate: 1800,
+            duration: 3000
+        });
+        anime({
+            targets: '.sample01',
+            rotate: 1800,
+            duration: 3000
+        });
+        anime({
+            targets: '.sample02',
+            rotate: 1800,
+            duration: 3000
+        });
+        anime({
+            targets: '.sample03',
+            rotate: 1800,
+            duration: 3000
+        });
+        anime({
+            targets: '.sride',
+            translateX: 250
+        });
+        anime({
+            targets: '.sride02',
+            translateX: 250
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Cute+Font|Luckiest+Guy|Sawarabi+Gothic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+    <title>quiz</title>
+    <style>
+        .header h1 {
+            font-family: 'Cute Font', cursive;
+            font-family: 'Sawarabi Gothic', sans-serif;
+            font-family: 'Luckiest Guy', cursive;
+            font-size: 90px;
+            width: 100%;
+            border: 1px solod #000;
+            box-sizing: border-box;
+            text-align: center;
+            color: white;
+        }
+
+        .header h2 {
+            font-family: "Nico Moji";
+            font-size: 60px;
+            width: 100%;
+            border: 1px solod #000;
+            box-sizing: border-box;
+            text-align: center;
+            color: white;
+        }
+
+        .footer #result,
+        #result2 {
+            font-family: "Nico Moji";
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.432);
+            border: 1px solod rgba(0, 0, 0, 0.178);
+            box-sizing: border-box;
+            text-align: center;
+            color: white;
+        }
+
+        .footer #result3 {
+            font-family: "Nico Moji";
+            width: 100%;
+            background-color: rgba(210, 247, 3, 0.432);
+            border: 1px solod rgba(210, 247, 3, 0.432);
+            box-sizing: border-box;
+            text-align: center;
+            color: rgb(99, 6, 250);
+        }
+
+        main {
+            font-family: "Nico Moji";
+            font-size: 40px;
+            text-align: center;
+            color: red;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body background="img/sutauozu-kabegami-960x600-786_1.jpg">
+    <header class="header">
+        <h1>STAR WARS</h1>
+        <h2 class="quiz1">クイズ</h2>
+    </header>
+    <main>
+        <p id="count"><datalist>第1問</datalist></p>
+        <p id="question"></p>
+        <form action="">
+            <label for="choice00">
+                <input type="radio" name="choices" id="choice00" value="0">
+                <span id="choice00_label"></span>
+            </label>
+            <label for="choice01">
+                <input type="radio" name="choices" id="choice01" value="1">
+                <span id="choice01_label"></span>
+            </label>
+            <label for="choice02">
+                <input type="radio" name="choices" id="choice02" value="2">
+                <span id="choice02_label"></span>
+            </label>
+        </form>
+    </main>
+    <footer class="footer">
+        <h1 id="result">結果は？</h1>
+        <h1 id="result2"></h1>
+        <h1 id="result3"></h1>
+    </footer>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+        $(function () {
+
+            // 問題の定義
+            const questions = [
+                '「フォースの覚醒」の最初の予告編で「チューバッカ、帰って来たぞ」と言ったのは次のどの登場人物でしょう？？',
+                '「フォースの覚醒」のメガホンを取ったＪ・Ｊ・エイブラムスが監督した作品は？？',
+                '「ジェダイの帰還」に登場した、おっちょこちょいでテディーベアみたいな生き物は？？',
+                'ルークの故郷タトゥイーンには太陽がいくつある？',
+                '「フォースの覚醒」に出てくる十字型のライトセーバーを持ったキャラクターの名前は？',
+                '現在は「エピソード４／新たなる希望」と呼ばれている、最初の作品が公開されたのは何年？'
+            ];
+            // 選択肢の定義
+            const choices = [
+                ['ハン・ソロ', 'ルーク・スカイウォーカー', 'レイア・オーガナ'],
+                ['ジュラシック・ワールド', 'アベンジャーズ', 'スタートレック'],
+                ['ジャワ', 'イウォーク', 'ウーキー'],
+                ['１つ', '２つ', '３つ'],
+                ['フィン', 'ダース・プレイガス', 'カイロ・レン'],
+                ['１９７９年', '１９７７年', '１９８６年']
+            ];
+
+            // 正解の定義
+            const answer = [0, 2, 1, 1, 2, 1];
+            // カウント用変数
+            let count = 0;
+            let correct = 0;
+
+            const ok = 'ok'
+            const ng = 'NG'
+
+            // 最初の問題と選択肢を表示
+            $('#question').text(questions[count]);
+            $('#choice00_label').text(choices[count][0]);
+            $('#choice01_label').text(choices[count][1]);
+            $('#choice02_label').text(choices[count][2]);
+
+            // クリック時に正誤判定&次の問題の内容を表示
+            $('input[name = "choices"]').on('click', function () {
+                if ($(this).val() == answer[count]) {
+                    alert('OK!さすが（^u^@')
+                    // ・正解の時の処理
+                    $('#result').text('きみはフォースが強いな、ジェダイ。')
+                    $('#result2').text('ヨーダならたぶん「何が必要か、すでに自分でわかっているはずじゃ」と言うだろう。お見事！。');
+                    // 正解数をカウント
+                    correct++;
+                } else {
+                    alert('booooooooooooo!')
+                    // 間違えたきの表示
+                    $('#result').text('フォースに多大な乱れが。');
+                    $('#result2').text('おそらく、このクイズでは、うまくいかないのだろう。');
+                }
+                // カウントを増やす
+                count++;
+                if (count < questions.length) {
+                    // let a = count + 1;
+                    // $('#count').text('第' + a  + '問');←こんなやり方もある
+                    // 次の問題を表示
+                    $('#count').text('第' + (Number(count) + 1) + '問');
+                    $('#question').text(questions[count]);
+                    $('#choice00_label').text(choices[count][0]);
+                    $('#choice01_label').text(choices[count][1]);
+                    $('#choice02_label').text(choices[count][2]);
+                } else {
+                    // 全部終わったら終了で正解数を表示
+                    alert('フォースと共にあらんことを！');
+                    $('#result3').text(correct + '問正解')
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>

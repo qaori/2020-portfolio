@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            line-height: 1;
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none;
+        }
+
+        body {
+            background: #000000;
+            font-family: "Sigmar One", cursive;
+            color: #868686;
+            text-align: center;
+        }
+    </style>
+    <script>
+        // function setup() {
+        //     createCanvas(windowWidth, windowHeight, WEBGL);
+        // }
+        // function draw() {
+        //     background(0);
+
+        //     // ライトの設定。マウスの位置で光の方向が変化
+        //     var locY = (mouseY / height - 0.5) * (-2);
+        //     var locX = (mouseX / width - 0.5) * 2;
+
+        //     ambientjight(100, 80, 80);
+        //     pointLight(200, 200, 200, locX, locY, 0);
+
+        //     // Yを少しずつ回転。
+        //     rotateY(frameCount * 0.0001);
+        //     // ドラック対応
+        //     orbitControl();
+
+        //     for (var j = 0; j < 10; j++) {
+        //         push();
+        //         for (var i = 0; i < 100; i++) {
+        //             translate(sin(frameCount * 0.001 + j) * 200, sin(frameCount * 0.001 + j) * 300, i * 0.1);
+        //             rotateZ(frameCount * 0 / 002);
+        //             push();
+        //         }
+        //         pop();
+        //     }
+        // }
+        function setup() {
+            createCanvas(windowWidth, windowHeight, WEBGL);
+        }
+        console.log('error')
+        function draw() {
+            background(0);
+
+
+            /*ライトの設定。マウスの位置で光の方向が変化*/
+            var locY = (mouseY / height - 0.5) * (-2);
+            // var locY = (mouseY / height - 100000) * (-4);数字を変えてみたけどわからん
+            var locX = (mouseX / width - 0.5) * 2;
+            // var locX = (mouseX / width - 100000) * 2;数字を変えてみたけどわからん
+
+            ambientLight(100, 80, 80);
+            // ambientLight(50, 40, 40);大して変わらんかった
+            pointLight(200, 200, 200, locX, locY, 0);
+            // pointLight(100, 100, 100, locX, locY, 0);変化がなかった
+
+            /*Yを少しずつ回転。*/
+            rotateY(frameCount * 0.0001);
+            // rotateY(frameCount * 10);試してみた(回転が速くなった）
+            //ドラック対応
+            orbitControl();
+
+            for (var j = 0; j < 10; j++) {
+                push();
+                for (var i = 0; i < 100; i++) {
+                    translate(sin(frameCount * 0.001 + j) * 200, sin(frameCount * 0.001 + j) * 300, i * 0.1);
+                    // translate(sin(frameCount * 0.002 + j) * 300, sin(frameCount * 0.002 + j) * 400, i * 0.1);変えてみた
+                    rotateZ(frameCount * 0.002);
+                    push();
+                    /*プリミティブの作成*/
+                    sphere(2, 10, 100);
+                    // sphere(2, 15, 100);
+                    // sphere([radius１粒ごとが大きくなったり小さくなったり], [detailX回転が速くなったり遅くなったり？], [detailY大きくすると動きが遅くなった？])
+                    pop();
+                }
+                pop();
+            }
+        }
+    </script>
+</body>
+
+</html>

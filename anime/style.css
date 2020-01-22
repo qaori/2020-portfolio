@@ -1,0 +1,104 @@
+html,
+    body {
+      font-family: "M PLUS Rounded 1c";
+      color: rgb(2, 2, 2);
+      /* background-color: rgb(250, 182, 194); */
+      /* max-width: auto; */
+    }
+#defaultCanvas0{
+  position: absolute; /*canvasを固定*/
+  top: 0; /*canvasを上に固定*/
+}
+
+    /* #Canvas {
+  position: fixed; canvasを固定
+  z-index: 30;
+  pointer-events: none;
+  top: 0; canvasを上に固定
+}
+
+    .content {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      margin: auto;
+    } */
+
+    header {
+      /* padding: 0.5em 1em; */
+      margin: 2em 0;
+      border: solid 3px rgb(3, 3, 3);
+    }
+
+    a {
+      color: #101111;
+    }
+
+    h1 {
+      font-size: 100px;
+      line-height: 1;
+      margin-bottom: 50px;
+      /* color: #ffffff; */
+      border: none;
+    }
+
+    /* .global-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: solid none;
+    } */
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      font-size: 20px;
+    }
+
+    li {
+      list-style: none;
+      margin: 18px;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+ .grid {
+  display: grid;
+  gap: 10px;
+  /* grid-template-columns: 1fr 1fr 1fr; 市松模様みたいになる */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+a {
+  border-radius: 10px;
+  padding: 15px;
+  align-items: center;
+}
+
+    /* .img {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+    }
+
+    .video {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } */
+
+    footer {
+      padding: 20px 0;
+      text-align: center;
+      color: #2c2727;
+      background-color: #74737383;
+    }
+
+    footer small {
+      font-size: 12px;
+    }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jerry Jump</title>
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="../js/anime.min.js"></script>
+</head>
+
+<body>
+    <section class="wrapper">
+        <div class="ball"></div>
+        <!-- <h1>Jerry infinite JUMP!</h1> -->
+    </section>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        .wrapper {
+            height: 80vh;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid darkorange;
+            background-color: gold;
+            color: #444;
+        }
+
+        .ball {
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            top: 20px;
+            bottom: 0;
+            left: calc(50% - 100px);
+            /* background-color: darkblue; */
+            /* border-radius: 50%; */
+            background-image: url('../img/jerry.png');
+            background-size: cover;
+        }
+    </style>
+    <script>
+        var bouncingBall = anime({
+            targets: '.ball',
+            translateY: '50vh',
+            duration: 300,
+            loop: true,
+            direction: 'alternate',
+            easing: 'easeInCubic',
+            scaleX: {
+                value: 1.05,
+                duration: 150,
+                delay: 268
+            }
+        });
+    </script>
+</body>
+
+</html>

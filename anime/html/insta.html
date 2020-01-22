@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Instagram</title>
+    <!-- <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script> -->
+    <script src="anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+</head>
+
+<body>
+    <div class="mainflex">
+        <heading>Instagram</heading>
+        <div class="gradient">
+            <svg>
+                <circle cx="100" cy="100" r="40" fill="none" stroke="white" stroke-width="9" id="bigCircle" />
+                <circle cx="147" cy="55" r="7" fill="white" stroke="none" stroke-width="9" id="dot" />
+                <rect rx="20" ry="20" x="25" y="25" width="150" height="150" fill="none" stroke="white" stroke-width="9"
+                    id="square" />
+            </svg>
+        </div>
+        <div class="content typewriter">
+            <h3>Bringing the world closer together.</h3>
+        </div>
+    </div>
+    <style>
+        body {
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mainflex {
+            background-color: #ffe5e5;
+        }
+
+        .gradient {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 18.5%;
+            box-shadow: 0 0 .15*200 rgba(#000, .5);
+            background: radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        svg {
+            width: 200px;
+            height: 200px;
+            position: fixed;
+
+        }
+
+        heading {
+            font-family: 'Rochester', cursive;
+            font-size: 40px;
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #dot {
+            animation: blink 350ms ease-in-out 8 alternate;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .typewriter h3 {
+            overflow: hidden;
+            border-right: .15em solid orange;
+            white-space: nowrap;
+            margin: 0 auto;
+            font-family: 'Lato', sans-serif;
+            letter-spacing: .10em;
+            animation:
+                typing 4.3s steps(40, end),
+                blink-caret .75s step-end infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+            from {
+                width: 0;
+                display: block;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: orange;
+            }
+        }
+
+        @media only screen and (max-width:373px) {
+            h3 {
+                font-size: 15px;
+            }
+        }
+
+        @media only screen and (max-width:290px) {
+            h3 {
+                font-size: 12px;
+            }
+        }
+    </style>
+    <!-- anime.js -->
+    <script>
+
+        anime({
+            targets: '#bigCircle',
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: [1, -0.39, .3, 1],
+            duration: 1500,
+            delay: 1200,
+            direction: 'forwards',
+        });
+        anime({
+            targets: '#square',
+            strokeDashoffset: [anime.setDashoffset, 0],
+            duration: 1500,
+            direction: 'forwards',
+            easing: [.65, .03, .3, 1]
+        });
+    </script>
+</body>
+
+</html>

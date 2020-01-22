@@ -1,0 +1,125 @@
+body{
+    font-family: Robot,Miryo,メイリオ,sans-serif;
+    background-color: black;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.button {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.button:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+/* ここからtest */
+ html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  /* display: table;
+  background-color: black; */
+} 
+
+@font-face {
+  font-family: neon;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+}
+
+.container {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.neon {
+  font-family: neon;
+  color: #FB4264;
+  font-size: 20px;
+  text-shadow: 0 0 3vw #F40A35;
+}
+
+.neon {
+  animation: neon 1s ease infinite;
+  -moz-animation: neon 1s ease infinite;
+  -webkit-animation: neon 1s ease infinite;
+}
+
+@keyframes neon {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+    color: #FED128;
+  }
+  50% {
+    text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+    color: #806914;
+  }
+}
+
+.box23 {
+    position: relative;
+    margin: 2em 0 2em 40px;
+    padding: 8px 15px;
+    background: #fff0c6;
+    border-radius: 30px;
+}
+.box23:before{
+    content: "\f111";
+    position: absolute;
+    font-size: 15px;
+    left: -40px;
+    bottom: 0;
+    color: #fff0c6;
+}
+.box23:after{
+    content: "\f111";
+    position: absolute;
+    font-size: 23px;
+    left: -23px;
+    bottom: 0;
+    color: #fff0c6;
+}
+.box23 textarea{
+    background: #fff0c6;
+    border: none;
+}
+div.scr{
+  width: 200px;
+  height: 300px;
+  overflow: scroll;
+  background-color: rgb(61, 60, 60);
+}

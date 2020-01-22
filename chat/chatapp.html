@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chatアプリ</title>
+    <link rel="stylesheet" href="chatapp.css">
+</head>
+
+<body>
+
+    <!-- 入力&出力場所を作成しよう -->
+    <div>
+        <div class="container">
+            <!-- <div class="neon">Neon </div>
+            <div class="flux">Flux </div> -->
+        </div>
+        <div class="neon">NAME
+            <input type="text" id="name">
+        </div>
+        <div>
+            <div class="box23">
+                <textarea name="" id="text" cols="18" rows="6"></textarea>
+            </div>
+
+            <!-- <button id="send">SEND</button> -->
+            <div class="wrap">
+                <button id="send" class="button">SEND</button>
+            </div>
+        </div>
+        <div id="output" class="scr"></div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- 以下にfirebaseのコードを貼り付けよう -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyC9j-zB35jZSp9n6UvKPpa4otQxQi9x5lQ",
+            authDomain: "chatapp-90300.firebaseapp.com",
+            databaseURL: "https://chatapp-90300.firebaseio.com",
+            projectId: "chatapp-90300",
+            storageBucket: "chatapp-90300.appspot.com",
+            messagingSenderId: "398229750831",
+            appId: "1:398229750831:web:19cef146b711e5a3"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var newPostRef = firebase.database().ref();
+    </script>
+
+
+    <script>
+        // 日時を取得する関数
+        function ymd() {
+            var date = new Date();
+            return date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
+        }
+
+        // 送信ボタンクリックでメッセージ送信
+        $('#send').on('click', function () {
+            newPostRef.push({
+                name: $('#name').val(),
+                time: ymd(),
+                text: $('#text').val()
+            });
+            $('#text').val('');
+        });
+
+        $('#text').on('keydown', function (e) {
+            // console.log(e);
+            if (e.keyCode == 13) {
+                // console.log('ok');
+                const sendData = {
+                    name: $('#name').val(),
+                    time: ymd(),
+                    text: $('#text').val()
+                };
+                newPostRef.push(sendData);
+                $('#text').val('');
+                console.log(e)
+            }
+
+        });
+
+        //メッセージが追加されたら自動的に表示
+        newPostRef.on('child_added', function (data) {
+            // console.log(data.key);
+            // console.log(data.val());
+            const k = data.key;
+            const v = data.val();
+
+            let str = '';
+            // str += '<div id="' + k + '">';
+            // str += '<p>' + v.name + '</p>';
+            // str += '<p>' + v.time + '</p>';
+            // str += '<p>' + v.text + '</p>';
+            // str += '</div>';
+
+            // kの後にclassをつけて画像挿入できるのか？
+            str += `<div id="${k}" class="(v.name)"> 
+            <p>${v.name}</p>
+            <p>${v.time}</p>
+            <p>${v.text}</p>
+            </div>`;
+            $('#output').append(str);
+        });
+
+
+    </script>
+
+</body>
+
+</html>

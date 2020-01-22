@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>アニメーションが終わるとアラートが出る</title>
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="anime.min.js"></script>
+</head>
+
+<body>
+    <div id="box"></div>
+    <div id="wrap">
+        <div id="box1"></div>
+        <div id="box2"></div>
+    </div>
+
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background: #3399FF;
+        }
+
+        #wrap {
+            position: relative;
+        }
+
+        #box2,
+        #box1 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: #5EA9F4;
+        }
+    </style>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //ここにjQueryのコードを書く
+            $('#box').animate({
+                'marginLeft': '500px'
+            });
+            $('#box1').animate({
+                'left': '500px'
+            });
+            $('#box2').animate({
+                'left': '300px',
+                'top': '200px'
+            });
+            $('#box1').animate({
+                'left': '500px',
+                'top': '300px'
+            });
+            $('#box1').animate({
+                'left': '500px',
+                'top': '300px'
+            });
+            $('#box1')
+                .animate({ 'left': '500px' })
+                .animate({ 'top': '500px' })
+                .animate({ 'left': '0px' })
+                .animate({ 'top': '0px' });
+            $('#box1').animate({
+                'left': '500px'
+            }, 1500);
+            $('#box1').animate({
+                'left': '500px'
+            }, {
+                    'duration': 1500
+                });
+            $('#box1').animate({
+                'left': '500px'
+            }, {
+                    'duration': 600,
+                    'easing': 'linear'
+                });
+            $('#box1').animate({
+                'left': '500px'
+            }, {
+                    'duration': 600,
+                    'complete': function () {
+                        alert('終わりました');
+                    }
+                });
+        });
+
+    </script>
+</body>
+
+</html>
