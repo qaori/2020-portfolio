@@ -22,6 +22,8 @@ function setup() {
     canvas.position(0, 0);//canvasをページの原点に固定
     canvas.style('z-index', '-1');
     noFill();
+   	// circleColor = color(random(255, 100, 50), circleAlpha);
+    // 	random()にしてもカラフルにはならなかった
     circleColor = color(255, 99, 100, circleAlpha);
     // 	tomato(rgb255, 99, 100)
 }
